@@ -37,11 +37,11 @@ spec:
             - name: DB_URL
               value: $(BASE_DB_URL)?sslmode=no-verify
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: http://immich-machine-learning-service.default.svc:3003
+              value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
-              value: http://immich-server-service.default.svc:3001
+              value: http://immich-server-service.apps.ocp-sno.example.com:3001
             - name: IMMICH_WEB_URL
-              value: http://immich-web-service.default.svc:3000
+              value: http://immich-web-service.apps.ocp-sno.example.com:3000
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -51,7 +51,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.default.svc
+              value: immich-redis-master.apps.ocp-sno.example.com
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -104,11 +104,11 @@ spec:
             - name: DB_URL
               value: $(BASE_DB_URL)?sslmode=no-verify
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: http://immich-machine-learning-service.default.svc:3003
+              value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
-              value: http://immich-server-service.default.svc:3001
+              value: http://immich-server-service.apps.ocp-sno.example.com:3001
             - name: IMMICH_WEB_URL
-              value: http://immich-web-service.default.svc:3000
+              value: http://immich-web-service.apps.ocp-sno.example.com:3000
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -118,7 +118,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.default.svc
+              value: immich-redis-master.apps.ocp-sno.example.com
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -165,11 +165,11 @@ spec:
             - name: DB_URL
               value: $(BASE_DB_URL)?sslmode=no-verify
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: http://immich-machine-learning-service.default.svc:3003
+              value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
-              value: http://immich-server-service.default.svc:3001
+              value: http://immich-server-service.apps.ocp-sno.example.com:3001
             - name: IMMICH_WEB_URL
-              value: http://immich-web-service.default.svc:3000
+              value: http://immich-web-service.apps.ocp-sno.example.com:3000
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -179,7 +179,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.default.svc
+              value: immich-redis-master.apps.ocp-sno.example.com
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -235,11 +235,11 @@ spec:
             - name: DB_URL
               value: $(BASE_DB_URL)?sslmode=no-verify
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: http://immich-machine-learning-service.default.svc:3003
+              value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
-              value: http://immich-server-service.default.svc:3001
+              value: http://immich-server-service.apps.ocp-sno.example.com:3001
             - name: IMMICH_WEB_URL
-              value: http://immich-web-service.default.svc:3000
+              value: http://immich-web-service.apps.ocp-sno.example.com:3000
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -249,7 +249,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.default.svc
+              value: immich-redis-master.apps.ocp-sno.example.com
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -292,9 +292,9 @@ spec:
       containers:
         - env:
             - name: IMMICH_SERVER_URL
-              value: http://immich-server-service.default.svc:3001
+              value: http://immich-server-service.apps.ocp-sno.example.com:3001
             - name: IMMICH_WEB_URL
-              value: http://immich-web-service.default.svc:3000
+              value: http://immich-web-service.apps.ocp-sno.example.com:3000
           image: altran1502/immich-proxy:release
           name: immich-proxy
           ports:
