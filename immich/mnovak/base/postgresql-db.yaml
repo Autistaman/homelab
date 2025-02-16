@@ -40,6 +40,8 @@ spec:
                 secretKeyRef:
                   key: password
                   name: immich-db-secret
+          securityContext:
+            runAsUser: 3000
           resources: {}
           volumeMounts:
             - name: cache-volume
