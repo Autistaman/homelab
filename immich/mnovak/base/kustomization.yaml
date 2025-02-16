@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - postgresql-db-pv.yaml
   - postgresql-db-pvc.yaml
-  - postgresql-db.yaml
+  # - postgresql-db.yaml
   - immich-deployments.yaml
   # - immich-services.yml

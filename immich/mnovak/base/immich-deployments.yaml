@@ -71,7 +71,7 @@ spec:
       volumes:
         - name: immich-server-claim0
           persistentVolumeClaim:
-            claimName: immich-claim0
+            claimName: immich-db-pvc
 status: {}
 ---
 apiVersion: apps/v1
@@ -201,7 +201,7 @@ spec:
       volumes:
         - name: immich-machine-learning-claim0
           persistentVolumeClaim:
-            claimName: immich-claim0
+            claimName: immich-db-pvc
 status: {}
 ---
 apiVersion: apps/v1
@@ -269,7 +269,7 @@ spec:
       volumes:
         - name: immich-microservices-claim0
           persistentVolumeClaim:
-            claimName: immich-claim0
+            claimName: immich-db-pvc
 status: {}
 ---
 apiVersion: apps/v1
