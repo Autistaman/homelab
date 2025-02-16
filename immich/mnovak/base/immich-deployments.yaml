@@ -44,11 +44,11 @@ spec:
                   key: username
                   name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: immich-machine-learning-service
+              value: http://immich-machine-learning-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_SERVER_URL
-              value: immich-server-service
+              value: http://immich-server-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_WEB_URL
-              value: immich-web-service
+              value: http://immich-web-mnovak-test.apps.ocp-sno.example.com
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -113,11 +113,11 @@ spec:
                   key: username
                   name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: immich-machine-learning-service
+              value: http://immich-machine-learning-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_SERVER_URL
-              value: immich-server-service
+              value: http://immich-server-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_WEB_URL
-              value: immich-web-service
+              value: http://immich-web-mnovak-test.apps.ocp-sno.example.com
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -176,11 +176,11 @@ spec:
                   key: username
                   name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: immich-machine-learning-service
+              value: http://immich-machine-learning-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_SERVER_URL
-              value: immich-server-service
+              value: http://immich-server-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_WEB_URL
-              value: immich-web-service
+              value: http://immich-web-mnovak-test.apps.ocp-sno.example.com
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -248,11 +248,11 @@ spec:
                   key: username
                   name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: immich-machine-learning-service
+              value: http://immich-machine-learning-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_SERVER_URL
-              value: immich-server-service
+              value: http://immich-server-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_WEB_URL
-              value: immich-web-service
+              value: http://immich-web-mnovak-test.apps.ocp-sno.example.com
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
@@ -300,11 +300,11 @@ spec:
       containers:
         - env:
             - name: IMMICH_MACHINE_LEARNING_URL
-              value: immich-machine-learning-service
+              value: http://immich-machine-learning-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_SERVER_URL
-              value: immich-server-service
+              value: http://immich-server-mnovak-test.apps.ocp-sno.example.com
             - name: IMMICH_WEB_URL
-              value: immich-web-service
+              value: http://immich-web-mnovak-test.apps.ocp-sno.example.com
           image: altran1502/immich-proxy:release
           name: immich-proxy
           ports:
