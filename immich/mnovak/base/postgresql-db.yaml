@@ -52,7 +52,9 @@ spec:
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
-      securityContext: {}
+      securityContext:
+        securityContext:
+          fsGroup: 26
       schedulerName: default-scheduler
   serviceName: postgresql-db-service
   podManagementPolicy: OrderedReady
