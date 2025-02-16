@@ -36,6 +36,16 @@ spec:
                   name: example-db-pguser-immich-user
             - name: DB_URL
               value: postgres-db
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: immich-db-secret
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
               value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
