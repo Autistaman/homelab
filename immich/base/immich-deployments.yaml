@@ -4,7 +4,7 @@ data:
 kind: Secret
 metadata:
   name: immich-jwt-key
-  namespace: default
+  namespace: immich
 type: Opaque
 ---
 apiVersion: apps/v1
