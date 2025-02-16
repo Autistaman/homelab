@@ -61,3 +61,16 @@ spec:
     application.name: immich-web
 status:
   loadBalancer: {}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgresql-db
+spec:
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+  type: ClusterIP
+  selector:
+    app: postgresql-db

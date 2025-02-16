@@ -6,4 +6,4 @@ resources:
   - postgresql-db-pvc.yaml
   - postgresql-db.yaml
   - immich-deployments.yaml
-  # - immich-services.yml
+  - immich-services.yml
