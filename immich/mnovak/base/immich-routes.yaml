@@ -1,0 +1,55 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: immich-machine-learning
+spec:
+  host: immich-machine-learning-mnovak-test.apps.ocp-sno.example.com
+  to:
+    kind: Service
+    name: immich-machine-learning-service
+    weight: 100
+  port:
+    targetPort: '3003'
+  wildcardPolicy: None
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: immich-proxy
+spec:
+  host: immich-proxy-mnovak-test.apps.ocp-sno.example.com
+  to:
+    kind: Service
+    name: immich-proxy-service
+    weight: 100
+  port:
+    targetPort: '2283'
+  wildcardPolicy: None
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: immich-server
+spec:
+  host: immich-server-mnovak-test.apps.ocp-sno.example.com
+  to:
+    kind: Service
+    name: immich-server-service
+    weight: 100
+  port:
+    targetPort: '3001'
+  wildcardPolicy: None
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: immich-web
+spec:
+  host: immich-web-mnovak-test.apps.ocp-sno.example.com
+  to:
+    kind: Service
+    name: immich-web-service
+    weight: 100
+  port:
+    targetPort: '3000'
+  wildcardPolicy: None
