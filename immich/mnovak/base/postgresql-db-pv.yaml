@@ -1,7 +1,7 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: immich-db
+  name: immich-db-pv
 spec:
   capacity:
     storage: 5Gi

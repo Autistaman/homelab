@@ -1,12 +1,12 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: immich-db
+  name: immich-db-pvc
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
-  volumeName: immich-db
+  volumeName: immich-db-pv
   volumeMode: Filesystem

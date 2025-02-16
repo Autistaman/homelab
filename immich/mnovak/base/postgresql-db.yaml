@@ -16,7 +16,7 @@ spec:
       volumes:
         - name: cache-volume
           persistentVolumeClaim:
-            claimName: immich-db
+            claimName: immich-db-pvc
       containers:
         - name: postgresql-db
           image: 'registry.redhat.io/rhel9/postgresql-15'
