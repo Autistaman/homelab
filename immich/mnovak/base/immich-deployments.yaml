@@ -29,13 +29,10 @@ spec:
             - /bin/sh
             - ./start-server.sh
           env:
-            - name: BASE_DB_URL
-              valueFrom:
-                secretKeyRef:
-                  key: uri
-                  name: example-db-pguser-immich-user
-            - name: DB_URL
-              value: postgres-db
+            - name: DB_HOSTNAME
+              value: postgresql-db
+            - name: DB_DATABASE_NAME
+              value: postgres
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -101,13 +98,20 @@ spec:
             - /bin/sh
             - ./entrypoint.sh
           env:
-            - name: BASE_DB_URL
+            - name: DB_HOSTNAME
+              value: postgresql-db
+            - name: DB_DATABASE_NAME
+              value: postgres
+            - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: uri
-                  name: example-db-pguser-immich-user
-            - name: DB_URL
-              value: $(BASE_DB_URL)?sslmode=no-verify
+                  key: password
+                  name: immich-db-secret
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
               value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
@@ -157,13 +161,20 @@ spec:
             - /bin/sh
             - ./entrypoint.sh
           env:
-            - name: BASE_DB_URL
+            - name: DB_HOSTNAME
+              value: postgresql-db
+            - name: DB_DATABASE_NAME
+              value: postgres
+            - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: uri
-                  name: example-db-pguser-immich-user
-            - name: DB_URL
-              value: $(BASE_DB_URL)?sslmode=no-verify
+                  key: password
+                  name: immich-db-secret
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
               value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
@@ -222,13 +233,20 @@ spec:
             - /bin/sh
             - ./start-microservices.sh
           env:
-            - name: BASE_DB_URL
+            - name: DB_HOSTNAME
+              value: postgresql-db
+            - name: DB_DATABASE_NAME
+              value: postgres
+            - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: uri
-                  name: example-db-pguser-immich-user
-            - name: DB_URL
-              value: $(BASE_DB_URL)?sslmode=no-verify
+                  key: password
+                  name: immich-db-secret
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: immich-db-secret
             - name: IMMICH_MACHINE_LEARNING_URL
               value: http://immich-machine-learning-service.apps.ocp-sno.example.com:3003
             - name: IMMICH_SERVER_URL
