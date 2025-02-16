@@ -10,13 +10,6 @@ spec:
     path: /mnt/Data/ocp/userdata
   accessModes:
     - ReadWriteMany
-  claimRef:
-    kind: PersistentVolumeClaim
-    namespace: immich
-    name: keycloak-db
-    uid: 9506db4a-164a-4ecd-91de-0b9700c8e77c
-    apiVersion: v1
-    resourceVersion: '336751'
   persistentVolumeReclaimPolicy: Retain
   storageClassName: lvms-vg1
   volumeMode: Filesystem
