@@ -51,12 +51,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.apps.ocp-sno.example.com
-            - name: REDIS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: redis-password
-                  name: immich-redis
+              value: redis-standalone
             - name: REDIS_DBINDEX
               value: "0"
             - name: REDIS_PORT
@@ -118,12 +113,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.apps.ocp-sno.example.com
-            - name: REDIS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: redis-password
-                  name: immich-redis
+              value: redis-standalone
             - name: REDIS_DBINDEX
               value: "0"
             - name: REDIS_PORT
@@ -179,12 +169,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.apps.ocp-sno.example.com
-            - name: REDIS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: redis-password
-                  name: immich-redis
+              value: redis-standalone
             - name: REDIS_DBINDEX
               value: "0"
             - name: REDIS_PORT
@@ -249,12 +234,7 @@ spec:
               value: production
             - name: PUBLIC_LOGIN_PAGE_MESSAGE
             - name: REDIS_HOSTNAME
-              value: immich-redis-master.apps.ocp-sno.example.com
-            - name: REDIS_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  key: redis-password
-                  name: immich-redis
+              value: redis-standalone
             - name: REDIS_DBINDEX
               value: "0"
             - name: REDIS_PORT
