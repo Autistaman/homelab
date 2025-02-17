@@ -79,3 +79,12 @@ spec:
   port:
     targetPort: http
   wildcardPolicy: None
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: immich-db-secret
+data:
+  password: UEBzc3cwcmQ=
+  username: cG9zdGdyZXM=
+type: Opaque
