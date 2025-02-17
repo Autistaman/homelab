@@ -1,0 +1,10 @@
+namespace: postgres-test
+redis:
+  name: redis
+  database:
+    mountpath: /mnt/data/pgdata/pg16
+  replicas: 1
+  storage: 1Gi
+  image:
+    name: redis/redis-stack-server
+    tag: latest

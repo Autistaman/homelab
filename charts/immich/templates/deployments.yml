@@ -1,0 +1,59 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  namespace: {{ .Values.namespace }}
+  name: {{ .Values.postgres.name }}
+spec:
+  replicas: {{ .Values.postgres.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.postgres.name }}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{ .Values.postgres.name }}
+    spec:
+      volumes:
+        - name: cache-volume
+          persistentVolumeClaim:
+            claimName: {{ .Values.postgres.name }}-pvc
+      containers:
+        - name: {{ .Values.postgres.name }}
+          image: "{{ .Values.postgres.image.name }}:{{ .Values.postgres.image.tag }}"
+          env:
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.postgres.database.password }}
+            - name: PGDATA
+              value: {{ .Values.postgres.database.pgpath }}
+            - name: POSTGRESQL_DATABASE
+              value: {{ .Values.postgres.database.name }}
+            - name: POSTGRESQL_USER
+              value: {{ .Values.postgres.username }}
+            - name: POSTGRESQL_ADMIN_PASSWORD
+              value: {{ .Values.postgres.password }}
+          securityContext:
+            runAsUser: {{ .Values.postgres.nfs.uid }}
+          resources: {}
+          volumeMounts:
+            - name: cache-volume
+              mountPath: {{ .Values.postgres.database.externalmountpath }}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext:
+        fsGroup: 0
+      schedulerName: default-scheduler
+  serviceName: {{ .Values.postgres.name }}-service
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 0
+  revisionHistoryLimit: 10
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
