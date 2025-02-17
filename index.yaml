@@ -43,6 +43,16 @@ entries:
   postgresql:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-17T20:43:20.885868649Z"
+    description: A Helm chart for Kubernetes
+    digest: ab99f37c97617cfa991b1e085e8ffa59cb14d1ce0c7d04b428778d96829b8ed2
+    name: postgresql
+    type: application
+    urls:
+    - https://github.com/Autistaman/homelab/releases/download/postgresql-0.1.6/postgresql-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-17T19:40:27.775870575Z"
     description: A Helm chart for Kubernetes
     digest: 0eaa517d320071e2d7547fd0f74c0655dd15de658bbd2247b19a5ec2f297e7c4
@@ -112,4 +122,4 @@ entries:
     urls:
     - https://github.com/Autistaman/homelab/releases/download/test-app-0.1.0/test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-17T19:40:27.77589459Z"
+generated: "2025-02-17T20:43:20.885916297Z"
