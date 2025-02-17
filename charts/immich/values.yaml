@@ -125,3 +125,12 @@ postgres:
     sharepath: /mnt/Data/ocp/userdata
     server: 192.168.69.9
     storageclass: lvms-vg1
+redis:
+  name: redis
+  database:
+    mountpath: /mnt/data/pgdata/pg16
+  replicas: 1
+  storage: 1Gi
+  image:
+    name: redis/redis-stack-server
+    tag: latest
