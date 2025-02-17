@@ -4,9 +4,9 @@ metadata:
   name: {{ .Values.namespace }}-anyuid-scc
 roleRef:
   kind: ClusterRole
-  name: system:openshift:scc:anyuid 
+  name: system:openshift:scc:anyuid
   apiGroup: rbac.authorization.k8s.io
 subjects:
   - kind: ServiceAccount
     name: default
-    namespace: {{ .Values.Namespace }}
+    namespace: {{ .Values.namespace }}
