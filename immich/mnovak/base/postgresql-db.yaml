@@ -65,3 +65,17 @@ spec:
   persistentVolumeClaimRetentionPolicy:
     whenDeleted: Retain
     whenScaled: Retain
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: immich
+spec:
+  host: immich-mnovak-test.apps.ocp-sno.example.com
+  to:
+    kind: Service
+    name: immich-server
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
