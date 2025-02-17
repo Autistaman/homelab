@@ -4,7 +4,7 @@ metadata:
   name: immich-db-pv
 spec:
   capacity:
-    storage: 100Gi
+    storage: 800Gi
   nfs:
     server: 192.168.69.9
     path: /mnt/Data/ocp/userdata

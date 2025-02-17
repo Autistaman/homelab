@@ -19,15 +19,15 @@ spec:
             claimName: immich-db-pvc
       containers:
         - name: postgresql-db
-          image: 'registry.redhat.io/rhel9/postgresql-15'
+          image: 'docker.io/tensorchord/pgvecto-rs:pg16-v0.3.0'
           env:
-            - name: POSTGRESQL_PASSWORD
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   key: password
                   name: immich-db-secret
             - name: PGDATA
-              value: /data/pgdata
+              value: /mnt/data/pgdata/pg16
             - name: POSTGRESQL_DATABASE
               value: immich
             - name: POSTGRESQL_USER
@@ -45,16 +45,15 @@ spec:
           resources: {}
           volumeMounts:
             - name: cache-volume
-              mountPath: /var/lib/pgsql/data
+              mountPath: /mnt/data
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
-      # securityContext:
-      #   securityContext:
-      #     fsGroup: 26
+      securityContext:
+        fsGroup: 0
       schedulerName: default-scheduler
   serviceName: postgresql-db-service
   podManagementPolicy: OrderedReady
