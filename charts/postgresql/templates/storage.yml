@@ -1,0 +1,28 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: {{ .Values.namespace }}
+  name: {{ .Values.postgres.name }}-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: {{ .Values.postgres.nfs.storage }}
+  volumeName: {{ .Values.postgres.name }}-pv
+  volumeMode: Filesystem
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: {{ .Values.postgres.name }}-pv
+spec:
+  capacity:
+    storage: {{ .Values.postgres.nfs.storage }}
+  nfs:
+    server: {{ .Values.postgres.nfs.server }}
+    path: {{ .Values.postgres.nfs.sharepath }}
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem

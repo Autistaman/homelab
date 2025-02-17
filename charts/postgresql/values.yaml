@@ -1,0 +1,20 @@
+namespace: postgres-test
+clustername: ocp-sno.example.com
+postgres:
+  name: postgres
+  database:
+    name: postgres-db
+    password: CHANGEME
+    pgpath: /mnt/data/pgdata/pg16
+    externalmountpath: /mnt/data
+  username: postgres
+  password: CHANGEME
+  replicas: 1
+  image:
+    name: docker.io/tensorchord/pgvecto-rs
+    tag: pg16-v0.3.0
+  nfs:
+    uid: 3000
+    storage: 800Gi
+    sharepath: /mnt/Data/ocp/userdata
+    server: 192.168.69.9

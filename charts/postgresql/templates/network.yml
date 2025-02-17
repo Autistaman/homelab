@@ -1,0 +1,13 @@
+# kind: Route
+# apiVersion: route.openshift.io/v1
+# metadata:
+#   name: {{ .Values.postgres.name }}
+# spec:
+#   host: "{{ .Values.postgres.name }}-{{ .Values.namespace }}.apps.{{ .Values.clustername }}"
+#   to:
+#     kind: Service
+#     name: {{ .Values.postgres.name }}-service
+#     weight: 100
+#   port:
+#     targetPort: http
+#   wildcardPolicy: None
