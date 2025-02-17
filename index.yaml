@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  test-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-17T16:23:45.633783352Z"
+    description: A Helm chart for Kubernetes
+    digest: 526e28bcdb8aa1973784af98f5e45f46001762f57ff32b0fc4d8e17c23fde34a
+    name: test-app
+    type: application
+    urls:
+    - https://github.com/Autistaman/homelab/releases/download/test-app-0.1.0/test-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-17T16:23:45.633789864Z"
