@@ -11,6 +11,7 @@ spec:
       storage: {{ .Values.postgres.nfs.storage }}
   volumeName: {{ .Values.postgres.name }}-pv
   volumeMode: Filesystem
+  storageClassName: {{ .Values.nfs.storageclass }}
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -26,3 +27,4 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
+  storageClassName: {{ .Values.nfs.storageclass }}
