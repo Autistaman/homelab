@@ -2,12 +2,12 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: immich-route
-  namespace: {{ .Values.namespace}}
+  namespace: {{ .Values.namespace }}
 spec:
   host: "web-{{ .Values.namespace }}.apps.{{ .Values.clustername }}"
   to:
     kind: Service
-    name: immich-server
+    name: {{ .Values.namespace }}-server
     weight: 100
   port:
     targetPort: http
