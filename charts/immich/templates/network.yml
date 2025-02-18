@@ -1,14 +1,42 @@
-# kind: Route
-# apiVersion: route.openshift.io/v1
-# metadata:
-#   name: {{ .Values.postgres.name }}
-#   namespace: {{ .Values.namespace}}
-# spec:
-#   host: "{{ .Values.postgres.name }}-{{ .Values.namespace }}.apps.{{ .Values.clustername }}"
-#   to:
-#     kind: Service
-#     name: immich-server
-#     weight: 100
-#   port:
-#     targetPort: http
-#   wildcardPolicy: None
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: immich-route
+  namespace: {{ .Values.namespace}}
+spec:
+  host: "web-{{ .Values.namespace }}.apps.{{ .Values.clustername }}"
+  to:
+    kind: Service
+    name: immich-server
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.postgres.name }}-service
+  namespace: {{ .Values.namespace}}
+spec:
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+  type: ClusterIP
+  selector:
+    app: {{ .Values.postgres.name }}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.redis.name }}-service
+  namespace: {{ .Values.namespace}}
+spec:
+  ports:
+    - protocol: TCP
+      port: 6379
+      targetPort: 6379
+  type: ClusterIP
+  selector:
+    app: {{ .Values.redis.name }}
