@@ -30,7 +30,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: {{ .Values.redis.name }}-service
+  name: {{ .Values.immichredis.name }}-service
   namespace: {{ .Values.namespace}}
 spec:
   ports:
@@ -39,4 +39,4 @@ spec:
       targetPort: 6379
   type: ClusterIP
   selector:
-    app: {{ .Values.redis.name }}
+    app: {{ .Values.immichredis.name }}
