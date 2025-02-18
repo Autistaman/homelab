@@ -10,6 +10,45 @@ entries:
             - name: Details
               url: https://github.com/immich-app/immich-charts/issues/149
     apiVersion: v2
+    appVersion: v1.126.1
+    created: "2025-02-18T17:01:57.472672372Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s.github.io/helm-charts
+      version: 1.4.0
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.0.0
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 19.5.3
+    description: A chart to power Immich (immich.app) running on kubernetes
+    digest: c03760f038402f0f63a08b87ccba53dc5b277508ae5ad39bf283a738a5c0084d
+    home: https://immich.app/
+    icon: https://raw.githubusercontent.com/immich-app/immich/main/design/immich-logo.svg
+    maintainers:
+    - email: 5434875+PixelJonas@users.noreply.github.com
+      name: PixelJonas
+    - email: immich@bo0tzz.me
+      name: bo0tzz
+    name: immich
+    sources:
+    - https://github.com/immich-app/immich-charts/tree/main/charts/immich
+    - https://github.com/immich-app/immich
+    urls:
+    - https://github.com/Autistaman/homelab/releases/download/immich-0.9.4/immich-0.9.4.tgz
+    version: 0.9.4
+  - annotations:
+      artifacthub.io/category: storage
+      artifacthub.io/changes: |-
+        - kind: deprecated
+          description: Deprecated postgres chart dependency
+          links:
+            - name: Details
+              url: https://github.com/immich-app/immich-charts/issues/149
+    apiVersion: v2
     appVersion: v1.119.0
     created: "2025-02-18T16:39:33.27773501Z"
     dependencies:
@@ -211,4 +250,4 @@ entries:
     urls:
     - https://github.com/Autistaman/homelab/releases/download/test-app-0.1.0/test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-18T16:39:33.277753524Z"
+generated: "2025-02-18T17:01:57.472694003Z"
