@@ -9,7 +9,7 @@ jobs:
   release:
     permissions:
       contents: write
-    runs-on: ocp-runner
+    runs-on: ocp-runner-55b8ccbb4b-xkbn4
     steps:
       - name: Checkout
         uses: actions/checkout@v4
