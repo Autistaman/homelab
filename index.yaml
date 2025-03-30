@@ -235,6 +235,17 @@ entries:
     urls:
     - https://github.com/Autistaman/homelab/releases/download/immich-0.9.0/immich-0.9.0.tgz
     version: 0.9.0
+  immich-new:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-30T01:18:43.903896909Z"
+    description: A Helm chart for Kubernetes
+    digest: 784d8dc0b098c05630f6578a07db5b3b073bf5df2b98a852284e1e757d9db306
+    name: immich-new
+    type: application
+    urls:
+    - https://github.com/Autistaman/homelab/releases/download/immich-new-0.1.0/immich-new-0.1.0.tgz
+    version: 0.1.0
   postgresql:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -328,4 +339,4 @@ entries:
     urls:
     - https://github.com/Autistaman/homelab/releases/download/test-app-0.1.0/test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-24T18:31:49.545335685Z"
+generated: "2025-03-30T01:18:43.903920333Z"
