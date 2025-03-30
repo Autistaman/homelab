@@ -1,0 +1,35 @@
+namespace: immich-va
+clustername: ocp-sno.example.com
+rhbk:
+  tls-crt: 
+  tls-key: 
+image:
+  tag: v1.126.1
+
+postgres:
+  name: postgres
+  database:
+    name: postgres
+    password: CHANGEME
+    username: postgres
+    pgpath: pgdata/pg16
+  replicas: 1
+  image:
+    name: docker.io/tensorchord/pgvecto-rs
+    tag: pg16-v0.3.0
+  nfs:
+    uid: 0
+    storage: 800Gi
+    sharepath: /mnt/Data/apps/immich
+    server: 192.168.69.9
+    storageclass: lvms-vg1
+
+immichredis:
+  name: redis
+  database:
+    mountpath: /data
+  replicas: 1
+  storage: 1Gi
+  image:
+    name: redis/redis-stack-server
+    tag: latest
