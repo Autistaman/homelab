@@ -8,7 +8,7 @@ spec:
   replicas: {{ .Values.immichredis.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.immichredis.name }}
+      app: {{ .Values.namespace }}-{{ .Values.immichredis.name }}
   template:
     metadata:
       labels:

@@ -77,7 +77,7 @@ spec:
             - name: cache
               mountPath: /cache
           terminationMessagePolicy: File
-          image: 'ghcr.io/immich-app/immich-machine-learning:v1.126.1'
+          image: 'ghcr.io/immich-app/immich-machine-learning:{{ .Values.image.tag }}'
       automountServiceAccountToken: true
       serviceAccount: default
       volumes:
