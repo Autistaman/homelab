@@ -109,6 +109,6 @@ metadata:
   name: rhbk-cert
   namespace: {{ .Values.namespace}}
 data:
-  tls.crt: {{ .Values.rhbk.tls-crt }}
-  tls.key: {{ .Values.rhbk.tls-key }}
+  tls.crt: {{ .Values.rhbk.tlscrt }}
+  tls.key: {{ .Values.rhbk.tlskey }}
 type: kubernetes.io/tls

@@ -1,8 +1,8 @@
 namespace: immich-va
 clustername: ocp-sno.example.com
 rhbk:
-  tls-crt: 
-  tls-key: 
+  tlscrt: 
+  tlskey: 
 image:
   tag: v1.126.1
 
