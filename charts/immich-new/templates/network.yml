@@ -40,3 +40,57 @@ spec:
   type: ClusterIP
   selector:
     app: {{ .Values.namespace }}-{{ .Values.immichredis.name }}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.namespace }}-server
+  namespace: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/instance: {{ .Values.namespace }}
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: server
+    app.kubernetes.io/service: {{ .Values.namespace }}-server
+spec:
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: http
+      protocol: TCP
+      port: 2283
+      targetPort: http
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app.kubernetes.io/instance: {{ .Values.namespace }}-server
+    app.kubernetes.io/name: server
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.namespace }}-machine-learning
+  namespace: {{ .Values.namespace }}
+  labels:
+    app.kubernetes.io/instance: {{ .Values.namespace }}
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: machine-learning
+    app.kubernetes.io/service: {{ .Values.namespace }}-machine-learning
+spec:
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3003
+      targetPort: http
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app.kubernetes.io/instance: {{ .Values.namespace }}
+    app.kubernetes.io/name: machine-learning

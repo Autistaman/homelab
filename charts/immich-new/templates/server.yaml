@@ -81,8 +81,6 @@ spec:
           volumeMounts:
             - name: library
               mountPath: /usr/src/app/upload
-            - name: uploads
-              mountPath: /mnt/data
             - name: rhbk-certs
               mountPath: /mnt/certificates
           terminationMessagePolicy: File
@@ -107,7 +105,7 @@ kind: Secret
 apiVersion: v1
 metadata:
   name: rhbk-cert
-  namespace: {{ .Values.namespace}}
+  namespace: {{ .Values.namespace }}
 data:
   tls.crt: {{ .Values.rhbk.tlscrt }}
   tls.key: {{ .Values.rhbk.tlskey }}

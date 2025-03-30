@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ .Values.immichredis.name }}
+  name: {{ .Values.namespace }}-{{ .Values.immichredis.name }}
   namespace: {{ .Values.namespace }}
 spec:
   serviceName: {{ .Values.namespace }}-{{ .Values.immichredis.name }}-service
@@ -12,20 +12,20 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.immichredis.name }}
+        app: {{ .Values.namespace }}-{{ .Values.immichredis.name }}
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-        - name: {{ .Values.immichredis.name }}
+        - name: {{ .Values.namespace }}-{{ .Values.immichredis.name }}
           image: "{{ .Values.immichredis.image.name }}:{{ .Values.immichredis.image.tag }}"
           ports:
             - containerPort: 6379
           volumeMounts:
-            - name: {{ .Values.immichredis.name }}
+            - name: {{ .Values.namespace }}-{{ .Values.immichredis.name }}
               mountPath: /data
   volumeClaimTemplates:
     - metadata:
-        name: {{ .Values.immichredis.name }}
+        name: {{ .Values.namespace }}-{{ .Values.immichredis.name }}
       spec:
         accessModes:
           - ReadWriteOnce
