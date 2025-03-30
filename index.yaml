@@ -238,6 +238,16 @@ entries:
   immich-new:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-03-30T02:00:32.386833294Z"
+    description: A Helm chart for Kubernetes
+    digest: e3cecd650611f655b9991c09574daa413d290126605f3f123cdc22c4cbf2aadc
+    name: immich-new
+    type: application
+    urls:
+    - https://github.com/Autistaman/homelab/releases/download/immich-new-0.1.2/immich-new-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-03-30T01:30:08.456921698Z"
     description: A Helm chart for Kubernetes
     digest: 039f6069a32830ec7bf927595a7ee52a889a6c23500ee8882e7ef3243cc436c1
@@ -349,4 +359,4 @@ entries:
     urls:
     - https://github.com/Autistaman/homelab/releases/download/test-app-0.1.0/test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-30T01:30:08.456972272Z"
+generated: "2025-03-30T02:00:32.386884039Z"
